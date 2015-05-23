@@ -6,7 +6,7 @@ TODO
 
 Add this line to your application's Gemfile:
 
-    gem 'rails-dom-testing'
+    gem 'rails-controller-testing'
 
 And then execute:
 
@@ -14,7 +14,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rails-dom-testing
+    $ gem install rails-controller-testing
 
 ## Usage
 
