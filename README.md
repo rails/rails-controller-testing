@@ -1,6 +1,10 @@
 # Rails::Controller::Testing
 
-TODO
+This gem brings back `assigns()` to your controller tests as well as `assert_template`
+to both controller and integration tests.
+
+Note: This gem is only useful once `assigns()` and `assert_template` have been
+removed from Rails.
 
 ## Installation
 
@@ -18,7 +22,31 @@ Or install it yourself as:
 
 ## Usage
 
-TODO
+### assigns()
+
+`assigns()` allows you to access the instance variables that have been passed to
+your views.
+
+```ruby
+class PostsController < ActionController::Base
+  def index
+    @posts = Post.all
+  end
+end
+
+class PostControllerTest < ActionController::TestCase
+  def test_index
+    get :index
+    assert_equal Post.all, assigns(:posts)
+  end
+end
+```
+
+### assert_template
+
+`assert_template` allows to you assert that certain templates have been rendered.
+
+TODO: Provide examples.
 
 ## Contributing
 
