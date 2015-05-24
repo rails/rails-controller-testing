@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rails-controller-testing (0.0.1)
+    rails-controller-testing (0.0.2)
       rails (>= 4.2.0.beta)
 
 GEM
