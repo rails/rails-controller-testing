@@ -1,3 +1,5 @@
+require 'active_support/concern'
+
 module Rails
   module Controller
     module Testing
@@ -11,5 +13,11 @@ module Rails
       include Integration
       include TestProcess
     end
+  end
+end
+
+module ActiveSupport
+  class TestCase
+    include Rails::Controller::Testing
   end
 end
