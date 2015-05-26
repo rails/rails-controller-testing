@@ -1,9 +1,9 @@
 # Rails::Controller::Testing
 
-This gem brings back `assigns()` to your controller tests as well as `assert_template`
+This gem brings back `assigns` to your controller tests as well as `assert_template`
 to both controller and integration tests.
 
-Note: This gem is only useful once `assigns()` and `assert_template` have been
+Note: This gem is only useful once `assigns` and `assert_template` have been
 removed from Rails.
 
 ## Installation
@@ -22,9 +22,9 @@ Or install it yourself as:
 
 ## Usage
 
-### assigns()
+### assigns
 
-`assigns()` allows you to access the instance variables that have been passed to
+`assigns` allows you to access the instance variables that have been passed to
 your views.
 
 ```ruby

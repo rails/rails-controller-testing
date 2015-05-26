@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Alan Guo Xiang Tan"]
   s.email       = ["tgx_world@hotmail.com"]
   s.homepage    = "https://github.com/tgxworld/rails-controller-testing"
-  s.summary     = "Extracting `assigns()` and `assert_template` from ActionDispatch."
+  s.summary     = "Extracting `assigns` and `assert_template` from ActionDispatch."
   s.license     = "MIT"
 
   s.files = Dir["{lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
