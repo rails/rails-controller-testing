@@ -2,8 +2,6 @@ require 'test_helper'
 require 'rails-controller-testing'
 
 class RenderTemplateTest < ActionView::TestCase
-  include Rails::Controller::Testing
-
   test "supports specifying templates with a Regexp" do
     render(template: "test/hello_world")
     assert_template %r{\Atest/hello_world\Z}

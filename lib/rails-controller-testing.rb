@@ -1,17 +1,23 @@
-require 'active_support/concern'
+require 'rails/controller/testing/test_process'
+require 'rails/controller/testing/integration'
+require 'rails/controller/testing/template_assertions'
 
-module Rails
-  module Controller
-    module Testing
-      autoload :TemplateAssertions, 'rails/controller/testing/template_assertions'
-      autoload :Integration, 'rails/controller/testing/integration'
-      autoload :TestProcess, 'rails/controller/testing/test_process'
+module ActionController
+  class TestCase
+    include Rails::Controller::Testing::TestProcess
+    include Rails::Controller::Testing::TemplateAssertions
+  end
+end
 
-      extend ActiveSupport::Concern
+module ActionDispatch
+  class IntegrationTest
+    include Rails::Controller::Testing::TemplateAssertions
+    include Rails::Controller::Testing::Integration
+  end
+end
 
-      include TemplateAssertions
-      include Integration
-      include TestProcess
-    end
+module ActionView
+  class TestCase
+    include Rails::Controller::Testing::TemplateAssertions
   end
 end
