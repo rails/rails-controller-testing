@@ -9,3 +9,6 @@ rvm:
   - ruby-head
 matrix:
   fast_finish: true
+env:
+  global:
+    - "JRUBY_OPTS=-Xcext.enabled=true"
