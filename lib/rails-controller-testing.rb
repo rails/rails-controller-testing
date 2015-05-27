@@ -15,9 +15,3 @@ module Rails
     end
   end
 end
-
-module ActiveSupport
-  class TestCase
-    include Rails::Controller::Testing
-  end
-end
