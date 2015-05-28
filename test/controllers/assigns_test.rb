@@ -2,8 +2,6 @@ require 'test_helper'
 require 'rails-controller-testing'
 
 class AssignsControllerTest < ActionController::TestCase
-  include Rails::Controller::Testing
-
   def test_assigns
     process :test_assigns
     # assigns can be accessed using assigns(key)

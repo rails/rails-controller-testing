@@ -1,9 +1,6 @@
 require 'test_helper'
-require 'rails-controller-testing'
 
 class TemplateAssertionsIntegrationTest < ActionDispatch::IntegrationTest
-  include Rails::Controller::Testing
-
   def test_template_reset_between_requests
     get '/template_assertions/render_with_template'
     assert_template 'test/hello_world'
