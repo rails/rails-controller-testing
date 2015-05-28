@@ -1,6 +1,7 @@
 # Rails::Controller::Testing
 
 [![Build Status](https://travis-ci.org/tgxworld/rails-controller-testing.svg?branch=master)](https://travis-ci.org/tgxworld/rails-controller-testing)
+[![Gem Version](https://badge.fury.io/rb/rails-controller-testing.svg)](http://badge.fury.io/rb/rails-controller-testing)
 
 This gem brings back `assigns` to your controller tests as well as `assert_template`
 to both controller and integration tests.
