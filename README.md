@@ -49,7 +49,14 @@ end
 
 `assert_template` allows to you assert that certain templates have been rendered.
 
-TODO: Provide examples.
+```ruby
+class PostControllerTest < ActionController::TestCase
+  def test_index
+    get :index
+    assert_template 'posts/index'
+  end
+end
+```
 
 ## Contributing
 
