@@ -19,6 +19,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency "actionpack", ">= 4.2"
   s.add_dependency "actionview", ">= 4.2"
+  s.add_dependency "activesupport", ">= 4.2"
 
   s.add_development_dependency "railties", "> 4.2"
 

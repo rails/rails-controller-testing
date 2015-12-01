@@ -1,23 +1,14 @@
+require 'active_support/lazy_load_hooks'
 require 'rails/controller/testing/test_process'
 require 'rails/controller/testing/integration'
 require 'rails/controller/testing/template_assertions'
 
-module ActionController
-  class TestCase
-    include Rails::Controller::Testing::TestProcess
-    include Rails::Controller::Testing::TemplateAssertions
-  end
-end
+ActiveSupport.on_load(:action_controller) do
+  ActionController::TestCase.include Rails::Controller::Testing::TestProcess
+  ActionController::TestCase.include Rails::Controller::Testing::TemplateAssertions
 
-module ActionDispatch
-  class IntegrationTest
-    include Rails::Controller::Testing::TemplateAssertions
-    include Rails::Controller::Testing::Integration
-  end
-end
+  ActionDispatch::IntegrationTest.include Rails::Controller::Testing::TemplateAssertions
+  ActionDispatch::IntegrationTest.include Rails::Controller::Testing::Integration
 
-module ActionView
-  class TestCase
-    include Rails::Controller::Testing::TemplateAssertions
-  end
+  ActionView::TestCase.include Rails::Controller::Testing::TemplateAssertions
 end
