@@ -4,11 +4,11 @@ require 'rails/controller/testing/integration'
 require 'rails/controller/testing/template_assertions'
 
 ActiveSupport.on_load(:action_controller) do
-  ActionController::TestCase.include Rails::Controller::Testing::TestProcess
-  ActionController::TestCase.include Rails::Controller::Testing::TemplateAssertions
+  ActionController::TestCase.send(:include, Rails::Controller::Testing::TestProcess)
+  ActionController::TestCase.send(:include, Rails::Controller::Testing::TemplateAssertions)
 
-  ActionDispatch::IntegrationTest.include Rails::Controller::Testing::TemplateAssertions
-  ActionDispatch::IntegrationTest.include Rails::Controller::Testing::Integration
+  ActionDispatch::IntegrationTest.send(:include, Rails::Controller::Testing::TemplateAssertions)
+  ActionDispatch::IntegrationTest.send(:include, Rails::Controller::Testing::Integration)
 
-  ActionView::TestCase.include Rails::Controller::Testing::TemplateAssertions
+  ActionView::TestCase.send(:include, Rails::Controller::Testing::TemplateAssertions)
 end
