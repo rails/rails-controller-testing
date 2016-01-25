@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Rails::Controller::Testing::VERSION
   s.authors     = ["Alan Guo Xiang Tan"]
   s.email       = ["tgx_world@hotmail.com"]
-  s.homepage    = "https://github.com/tgxworld/rails-controller-testing"
+  s.homepage    = "https://github.com/rails/rails-controller-testing"
   s.summary     = "Extracting `assigns` and `assert_template` from ActionDispatch."
   s.license     = "MIT"
 
