@@ -25,8 +25,20 @@ Or install it yourself as:
 
 ### RSpec
 
+See https://github.com/rspec/rspec-rails/issues/1393.
+
 RSpec will automatically integrate with this gem once Rails 5 is released proper.
 Adding the gem to your `Gemfile` is sufficient.
+
+To work around the issue right now, you'll have to include the modules in your `spec_helper`.
+
+```ruby
+RSpec.configure do |config|
+  config.include Rails::Controller::Testing::TestProcess
+  config.include Rails::Controller::Testing::TemplateAssertions
+  config.include Rails::Controller::Testing::Integration
+end
+```
 
 ## Usage
 
