@@ -17,11 +17,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_path = ['lib']
 
-  s.add_dependency "actionpack", ">= 4.2"
-  s.add_dependency "actionview", ">= 4.2"
-  s.add_dependency "activesupport", ">= 4.2"
+  s.add_dependency "actionpack", ">= 5.0.0.beta1"
+  s.add_dependency "actionview", ">= 5.0.0.beta1"
+  s.add_dependency "activesupport", ">= 5.0.0.beta1"
 
-  s.add_development_dependency "railties", "> 4.2"
+  s.add_development_dependency "railties", ">= 5.0.0.beta1"
 
   if defined?(JRUBY_VERSION)
     s.add_development_dependency "jdbc-sqlite3"
