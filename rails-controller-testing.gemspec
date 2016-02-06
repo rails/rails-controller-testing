@@ -7,8 +7,7 @@ require "rails/controller/testing/version"
 Gem::Specification.new do |s|
   s.name        = "rails-controller-testing"
   s.version     = Rails::Controller::Testing::VERSION
-  s.authors     = ["Alan Guo Xiang Tan"]
-  s.email       = ["tgx_world@hotmail.com"]
+  s.authors     = ["Rails Core Team"]
   s.homepage    = "https://github.com/rails/rails-controller-testing"
   s.summary     = "Extracting `assigns` and `assert_template` from ActionDispatch."
   s.license     = "MIT"
@@ -17,11 +16,11 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_path = ['lib']
 
-  s.add_dependency "actionpack", ">= 5.0.0.beta1"
-  s.add_dependency "actionview", ">= 5.0.0.beta1"
-  s.add_dependency "activesupport", ">= 5.0.0.beta1"
+  s.add_dependency "actionpack", "~> 5.x"
+  s.add_dependency "actionview", "~> 5.x"
+  s.add_dependency "activesupport", "~> 5.x"
 
-  s.add_development_dependency "railties", ">= 5.0.0.beta1"
+  s.add_development_dependency "railties", "~> 5.x"
 
   if defined?(JRUBY_VERSION)
     s.add_development_dependency "jdbc-sqlite3"
