@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'rails-controller-testing'
 
 class AssignsControllerTest < ActionController::TestCase
   def test_assigns

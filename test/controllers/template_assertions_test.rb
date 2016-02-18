@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'rails-controller-testing'
 
 class TemplateAssertionsControllerTest < ActionController::TestCase
   def test_with_invalid_hash_keys_raises_argument_error
