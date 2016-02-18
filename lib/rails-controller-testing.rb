@@ -9,6 +9,9 @@ ActiveSupport.on_load(:action_controller) do
 
   ActionDispatch::IntegrationTest.send(:include, Rails::Controller::Testing::TemplateAssertions)
   ActionDispatch::IntegrationTest.send(:include, Rails::Controller::Testing::Integration)
+  ActionDispatch::IntegrationTest.send(:include, Rails::Controller::Testing::TestProcess)
+end
 
+ActiveSupport.on_load(:action_view) do
   ActionView::TestCase.send(:include, Rails::Controller::Testing::TemplateAssertions)
 end

@@ -1,5 +1,4 @@
 require 'test_helper'
-require 'rails-controller-testing'
 
 class RenderTemplateTest < ActionView::TestCase
   test "supports specifying templates with a Regexp" do

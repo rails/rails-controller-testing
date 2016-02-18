@@ -1,7 +1,7 @@
 class ViewAssignsController < ActionController::Base
   def test_assigns
     @foo = "foo"
-    render nothing: true
+    head :ok
   end
 
   def view_assigns
