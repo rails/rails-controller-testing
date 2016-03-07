@@ -27,16 +27,19 @@ Or install it yourself as:
 
 See https://github.com/rspec/rspec-rails/issues/1393.
 
-RSpec will automatically integrate with this gem once Rails 5 is released proper.
+rspec-rails will automatically integrate with this gem once `3.5.0` and Rails 5 are released.
 Adding the gem to your `Gemfile` is sufficient.
 
-To work around the issue right now, you'll have to include the modules in your `rails_helper`.
+To work around the issue right now, use a beta version of rspec-rails or
+manually you'll have to include the modules in your `rails_helper`.
 
 ```ruby
 RSpec.configure do |config|
-  config.include Rails::Controller::Testing::TestProcess
-  config.include Rails::Controller::Testing::TemplateAssertions
-  config.include Rails::Controller::Testing::Integration
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
 end
 ```
 
