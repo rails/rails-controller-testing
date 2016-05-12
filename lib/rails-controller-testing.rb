@@ -2,6 +2,7 @@ require 'active_support/lazy_load_hooks'
 require 'rails/controller/testing/test_process'
 require 'rails/controller/testing/integration'
 require 'rails/controller/testing/template_assertions'
+require 'rails/controller/testing/version'
 
 ActiveSupport.on_load(:action_controller) do
   ActionController::TestCase.send(:include, Rails::Controller::Testing::TestProcess)
