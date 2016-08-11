@@ -1,7 +1,7 @@
 module Rails
   module Controller
     module Testing
-      VERSION = "0.1.1"
+      VERSION = "1.0.0"
     end
   end
 end
