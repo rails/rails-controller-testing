@@ -40,6 +40,19 @@ RSpec.configure do |config|
 end
 ```
 
+## Outside Rails
+
+For projects and gems using controller tests outside of a Rails application,
+invoke the `Rails::Controller::Testing.install` method inside your test suite
+setup to include the required modules on controller test cases.
+
+```ruby
+# test/test_helper.rb
+
+require 'rails-controller-testing'
+Rails::Controller::Testing.install
+```
+
 ## Usage
 
 ### assigns
