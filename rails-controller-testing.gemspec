@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
   s.require_path = ['lib']
 
-  s.required_ruby_version = '>= 2.2.1'
+  s.required_ruby_version = '>= 2.2.2'
 
   s.add_dependency "actionpack", "~> 5.x"
   s.add_dependency "actionview", "~> 5.x"
