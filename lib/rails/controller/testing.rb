@@ -7,17 +7,19 @@ module Rails
   module Controller
     module Testing
       def self.install
-        ActiveSupport.on_load(:action_controller) do
-          ActionController::TestCase.include Rails::Controller::Testing::TestProcess
-          ActionController::TestCase.include Rails::Controller::Testing::TemplateAssertions
-
-          ActionDispatch::IntegrationTest.include Rails::Controller::Testing::TemplateAssertions
-          ActionDispatch::IntegrationTest.include Rails::Controller::Testing::Integration
-          ActionDispatch::IntegrationTest.include Rails::Controller::Testing::TestProcess
+        ActiveSupport.on_load(:action_controller_test_case) do
+          include Rails::Controller::Testing::TestProcess
+          include Rails::Controller::Testing::TemplateAssertions
         end
 
-        ActiveSupport.on_load(:action_view) do
-          ActionView::TestCase.include Rails::Controller::Testing::TemplateAssertions
+        ActiveSupport.on_load(:action_dispatch_integration_test) do
+          include Rails::Controller::Testing::TemplateAssertions
+          include Rails::Controller::Testing::Integration
+          include Rails::Controller::Testing::TestProcess
+        end
+
+        ActiveSupport.on_load(:action_view_test_case) do
+          include Rails::Controller::Testing::TemplateAssertions
         end
       end
     end
