@@ -24,11 +24,11 @@ Or install it yourself as:
 
 See https://github.com/rspec/rspec-rails/issues/1393.
 
-rspec-rails will automatically integrate with this gem once `3.5.0` and Rails 5 are released.
+rspec-rails automatically integrates with this gem since version `3.5.0`.
 Adding the gem to your `Gemfile` is sufficient.
 
-To work around the issue right now, use a beta version of rspec-rails or
-manually you'll have to include the modules in your `rails_helper`.
+If you use an older version of rspec-rails, you can manually include the
+modules in your `rails_helper`.
 
 ```ruby
 RSpec.configure do |config|
