@@ -19,8 +19,8 @@ class AssignsControllerTest < ActionController::TestCase
   def test_view_assigns
     @controller = ViewAssignsController.new
     process :test_assigns
-    assert_equal nil, assigns(:foo)
-    assert_equal nil, assigns[:foo]
+    assert_nil assigns(:foo)
+    assert_nil assigns[:foo]
     assert_equal "bar", assigns(:bar)
     assert_equal "bar", assigns[:bar]
   end
