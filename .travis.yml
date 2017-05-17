@@ -1,9 +1,13 @@
 sudo: false
 cache: bundler
 rvm:
-  - 2.2.4
-  - 2.3.0
+  - 2.2.7
+  - 2.3.4
+  - 2.4.1
   - ruby-head
+gemfile:
+  - Gemfile
+  - gemfiles/Gemfile-rails-5-0
 matrix:
   allow_failures:
     - rvm: ruby-head
