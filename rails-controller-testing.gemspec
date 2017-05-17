@@ -18,8 +18,8 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.2.2'
 
-  s.add_dependency "actionpack", "~> 5.x" # TODO: require 5.0.1 to get the test case hook
-  s.add_dependency "actionview", "~> 5.x" # TODO: require 5.0.1 to get the test case hook
+  s.add_dependency "actionpack", "~> 5.x", ">= 5.0.1"
+  s.add_dependency "actionview", "~> 5.x", ">= 5.0.1"
   s.add_dependency "activesupport", "~> 5.x"
 
   s.add_development_dependency "railties", "~> 5.x"
