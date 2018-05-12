@@ -8,6 +8,7 @@ rvm:
 gemfile:
   - Gemfile
   - gemfiles/Gemfile-rails-5-0
+  - gemfiles/Gemfile-rails-5-2
 matrix:
   allow_failures:
     - rvm: ruby-head
