@@ -18,11 +18,11 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '>= 2.2.2'
 
-  s.add_dependency "actionpack", ">= 5.0.1", "< 6.1.x"
-  s.add_dependency "actionview", ">= 5.0.1", "< 6.1.x"
-  s.add_dependency "activesupport", ">= 5.0.1", "< 6.1.x"
+  s.add_dependency "actionpack", ">= 5.0.1.x"
+  s.add_dependency "actionview", ">= 5.0.1.x"
+  s.add_dependency "activesupport", ">= 5.0.1.x"
 
-  s.add_development_dependency "railties", "> 5.0.1", "< 6.1.x"
+  s.add_development_dependency "railties", "> 5.0.1.x"
 
   if defined?(JRUBY_VERSION)
     s.add_development_dependency "jdbc-sqlite3"
