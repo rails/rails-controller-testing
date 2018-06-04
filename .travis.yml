@@ -1,18 +1,25 @@
 sudo: false
 cache: bundler
 rvm:
-  - 2.2.7
-  - 2.3.4
-  - 2.4.1
+  - 2.2.10
+  - 2.3.7
+  - 2.4.4
+  - 2.5.1
   - ruby-head
 gemfile:
   - Gemfile
   - gemfiles/Gemfile-rails-5-0
   - gemfiles/Gemfile-rails-5-2
+  - gemfiles/Gemfile-rails-master
 matrix:
   allow_failures:
     - rvm: ruby-head
   fast_finish: true
+  exclude:
+    - rvm: 2.2.10
+      gemfile: gemfiles/Gemfile-rails-master
+    - rvm: 2.3.7
+      gemfile: gemfiles/Gemfile-rails-master
 env:
   global:
     - "JRUBY_OPTS=-Xcext.enabled=true"
