@@ -1,3 +1,5 @@
+require 'action_pack'
+
 module Rails
   module Controller
     module Testing
