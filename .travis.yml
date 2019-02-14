@@ -21,6 +21,8 @@ matrix:
       gemfile: gemfiles/Gemfile-rails-master
     - rvm: 2.3.8
       gemfile: gemfiles/Gemfile-rails-master
+    - rvm: 2.4.5
+      gemfile: gemfiles/Gemfile-rails-master
 env:
   global:
     - "JRUBY_OPTS=-Xcext.enabled=true"
