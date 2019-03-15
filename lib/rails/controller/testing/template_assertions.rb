@@ -30,6 +30,16 @@ module Rails
             end
           end
 
+          @_subscribers << ActiveSupport::Notifications.subscribe("determine_template.rails_controller_testing") do |_name, _start, _finish, _id, payload|
+            if payload[:options][:file]
+              path = payload[:template_identifier]
+              if path
+                @_files[path] += 1
+                @_files[path.split("/").last] += 1
+              end
+            end
+          end
+
           @_subscribers << ActiveSupport::Notifications.subscribe("!render_template.action_view") do |_name, _start, _finish, _id, payload|
             if virtual_path = payload[:virtual_path]
               partial = virtual_path =~ /^.*\/_[^\/]*$/
@@ -40,12 +50,6 @@ module Rails
               end
 
               @_templates[virtual_path] += 1
-            else
-              path = payload[:identifier]
-              if path
-                @_files[path] += 1
-                @_files[path.split("/").last] += 1
-              end
             end
           end
         end
