@@ -56,9 +56,9 @@ module Rails
           end
         end
 
-        def process(*args)
+        def process(action, **options)
           reset_template_assertion
-          super
+          super(action, **options)
         end
 
         def reset_template_assertion
