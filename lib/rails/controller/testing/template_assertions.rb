@@ -51,7 +51,7 @@ module Rails
         end
 
         def teardown_subscriptions
-          @_subscribers.each do |subscriber|
+          @_subscribers && @_subscribers.each do |subscriber|
             ActiveSupport::Notifications.unsubscribe(subscriber)
           end
         end
