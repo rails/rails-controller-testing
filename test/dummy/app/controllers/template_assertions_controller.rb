@@ -20,7 +20,7 @@ class TemplateAssertionsController < ActionController::Base
   end
 
   def render_file_relative_path
-    render file: 'test/dummy/README.rdoc'
+    render file: '/test/dummy/README.rdoc'
   end
 
   def render_with_layout
