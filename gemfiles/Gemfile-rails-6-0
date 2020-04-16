@@ -1,0 +1,6 @@
+source 'https://rubygems.org'
+gemspec path: '..'
+
+git_source(:github) { |repo_name| "https://github.com/#{repo_name}.git" }
+
+gem 'actionpack', '~> 6.0.0', github: 'rails/rails', branch: '6-0-stable'
