@@ -12,11 +12,6 @@ class TemplateAssertionsControllerTest < ActionController::TestCase
     assert_template partial: '_partial'
   end
 
-  def test_file_with_absolute_path_success
-    get :render_file_absolute_path
-    assert_template file: File.expand_path('../../dummy/README.rdoc', __FILE__)
-  end
-
   def test_file_with_relative_path_success
     get :render_file_relative_path
     assert_template file: 'README.rdoc'
@@ -27,12 +22,6 @@ class TemplateAssertionsControllerTest < ActionController::TestCase
 
     assert_raise(ActiveSupport::TestCase::Assertion) do
       assert_template :file => 'test/hello_world'
-    end
-
-    get :render_file_absolute_path
-
-    assert_raise(ActiveSupport::TestCase::Assertion) do
-      assert_template file: nil
     end
   end
 
