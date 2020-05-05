@@ -8,9 +8,9 @@ module Rails
         http_verbs.push('xhr', 'xml_http_request') if ActionPack.version < Gem::Version.new('5.1')
 
         http_verbs.each do |method|
-          define_method(method) do |*args|
+          define_method(method) do |*args, **kwargs|
             reset_template_assertion
-            super(*args)
+            super(*args, **kwargs)
           end
         end
       end
