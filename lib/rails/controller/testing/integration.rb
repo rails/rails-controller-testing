@@ -13,7 +13,11 @@ module Rails
         http_verbs.each do |method|
           define_method(method) do |*args, **kwargs|
             reset_template_assertion
-            super(*args, **kwargs)
+            if kwargs == {}
+              super(*args)
+            else
+              super(*args, **kwargs)
+            end
           end
         end
       end
