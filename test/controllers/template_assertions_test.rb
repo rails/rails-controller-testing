@@ -13,6 +13,8 @@ class TemplateAssertionsControllerTest < ActionController::TestCase
   end
 
   def test_file_with_relative_path_success
+    skip "Deprecated in ActionPack 6.1+" if ActionPack.version >= Gem::Version.new('6.1')
+
     get :render_file_relative_path
     assert_template file: 'README.rdoc'
   end
@@ -179,8 +181,10 @@ class TemplateAssertionsControllerTest < ActionController::TestCase
     get :render_nothing
     assert_template layout: nil
 
-    get :render_file_relative_path
-    assert_template file: 'README.rdoc'
+    if ActionPack.version < Gem::Version.new('6.1')
+      get :render_file_relative_path
+      assert_template file: 'README.rdoc'
+    end
 
     get :render_nothing
     assert_template file: nil
