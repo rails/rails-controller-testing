@@ -3,8 +3,7 @@
 This gem brings back `assigns` to your controller tests as well as `assert_template`
 to both controller and integration tests.
 
-Note: This gem is only useful once `assigns` and `assert_template` have been
-removed from Rails.
+These methods were [removed in Rails 5](https://github.com/rails/rails/issues/18950).
 
 ## Installation
 
