@@ -26,6 +26,8 @@ class TemplateAssertionsIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   def test_file_reset_between_requests
+    skip "Deprecated in ActionPack 6.1+" if ActionPack.version >= Gem::Version.new('6.1')
+
     get '/template_assertions/render_file_relative_path'
     assert_template file: 'README.rdoc'
 
@@ -64,6 +66,8 @@ class TemplateAssertionsIntegrationTest < ActionDispatch::IntegrationTest
   end
 
   def test_file_reset_between_requests_when_opening_a_session
+    skip "Deprecated in ActionPack 6.1+" if ActionPack.version >= Gem::Version.new('6.1')
+
     open_session do |session|
       session.get '/template_assertions/render_file_relative_path'
       session.assert_template file: 'README.rdoc'
