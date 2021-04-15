@@ -41,7 +41,7 @@ end
 
 ## Outside Rails
 
-For projects and gems using controller tests outside of a Rails application,
+For projects and gems using controller tests outside a Rails application,
 invoke the `Rails::Controller::Testing.install` method inside your test suite
 setup to include the required modules on controller test cases.
 
