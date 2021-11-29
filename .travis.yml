@@ -18,6 +18,3 @@ matrix:
     - rvm: 2.6.5
       gemfile: gemfiles/Gemfile-rails-main
   fast_finish: true
-env:
-  global:
-    - "JRUBY_OPTS=-Xcext.enabled=true"
