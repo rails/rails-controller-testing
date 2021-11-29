@@ -10,6 +10,7 @@ gemfile:
   - gemfiles/Gemfile-rails-main
 matrix:
   allow_failures:
+    - gemfile: gemfiles/Gemfile-rails-main
     - rvm: ruby-head
   exclude:
     - rvm: 2.5.3
