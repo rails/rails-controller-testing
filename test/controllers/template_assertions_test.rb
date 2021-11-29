@@ -160,6 +160,27 @@ class TemplateAssertionsControllerTest < ActionController::TestCase
     assert_template layout: :standard
   end
 
+  def test_identifier
+    get :render_with_template
+    assert_template identifier: Rails.root.join('app/views/test/hello_world.html.erb').to_s
+  end
+
+  def test_identifier_with_layout
+    get :render_with_layout
+    assert_template identifier: Rails.root.join('app/views/layouts/standard.html.erb').to_s
+  end
+
+  def test_identifier_with_partial
+    get :render_with_partial
+    assert_template identifier: Rails.root.join('app/views/test/_partial.html.erb').to_s
+  end
+
+  def test_identifier_with_layout_and_partial
+    get :render_with_layout_and_partial
+    assert_template identifier: Rails.root.join('app/views/layouts/standard.html.erb').to_s
+    assert_template identifier: Rails.root.join('app/views/test/_partial.html.erb').to_s
+  end
+
   def test_assert_template_reset_between_requests
     get :render_with_template
     assert_template 'test/hello_world'
