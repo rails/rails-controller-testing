@@ -11,6 +11,11 @@ gemfile:
 matrix:
   allow_failures:
     - rvm: ruby-head
+  exclude:
+    - rvm: 2.5.3
+      gemfile: gemfiles/Gemfile-rails-main
+    - rvm: 2.6.5
+      gemfile: gemfiles/Gemfile-rails-main
   fast_finish: true
 env:
   global:
