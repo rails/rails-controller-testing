@@ -76,7 +76,7 @@ end
 
 ### assert_template
 
-`assert_template` allows to you assert that certain templates have been rendered.
+`assert_template` allows you to assert that certain templates have been rendered.
 
 ```ruby
 class PostControllerTest < ActionController::TestCase
