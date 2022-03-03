@@ -2,6 +2,7 @@ require 'active_support/lazy_load_hooks'
 require 'rails/controller/testing/test_process'
 require 'rails/controller/testing/integration'
 require 'rails/controller/testing/template_assertions'
+require 'rails/controller/testing/instrument_determine_template'
 
 module Rails
   module Controller
@@ -16,6 +17,12 @@ module Rails
           include Rails::Controller::Testing::TemplateAssertions
           include Rails::Controller::Testing::Integration
           include Rails::Controller::Testing::TestProcess
+        end
+
+        if ActiveSupport::VERSION::MAJOR >= 6
+          ActiveSupport.on_load(:action_view) do
+            ActionView::TemplateRenderer.prepend(InstrumentDetermineTemplate)
+          end
         end
 
         ActiveSupport.on_load(:action_view_test_case) do
