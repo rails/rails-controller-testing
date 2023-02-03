@@ -12,8 +12,7 @@ Gem::Specification.new do |s|
   s.summary     = "Extracting `assigns` and `assert_template` from ActionDispatch."
   s.license     = "MIT"
 
-  s.files = Dir["{lib}/**/*", "LICENSE", "Rakefile", "README.md"]
-  s.test_files = Dir["test/**/*"]
+  s.files = Dir["{lib}/**/*", "LICENSE", "README.md"]
   s.require_path = ['lib']
 
   s.required_ruby_version = '>= 2.2.2'
