@@ -1,7 +1,7 @@
 Contributing to Rails::Controller::Testing
 =====================
 
-[![Build Status](https://travis-ci.org/rails/rails-controller-testing.svg?branch=master)](https://travis-ci.org/rails/rails-controller-testing)
+[![Build Status](https://github.com/rails/rails-controller-testing/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/rails/rails-controller-testing/actions/workflows/ci.yml)
 
 Rails::Controller::Testing is work of [many contributors](https://github.com/rails/rails-controller-testing/graphs/contributors). You're encouraged to submit [pull requests](https://github.com/rails/rails-controller-testing/pulls), [propose features and discuss issues](https://github.com/rails/rails-controller-testing/issues).
 
