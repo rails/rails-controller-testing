@@ -11,7 +11,7 @@ module Rails
           teardown :teardown_subscriptions
         end
 
-        RENDER_TEMPLATE_INSTANCE_VARIABLES = %w{partials templates layouts files}.freeze
+        RENDER_TEMPLATE_INSTANCE_VARIABLES = %w{partials templates layouts files identifiers}.freeze
 
         def setup_subscriptions
           RENDER_TEMPLATE_INSTANCE_VARIABLES.each do |instance_variable|
@@ -31,6 +31,11 @@ module Rails
           end
 
           @_subscribers << ActiveSupport::Notifications.subscribe("!render_template.action_view") do |_name, _start, _finish, _id, payload|
+            path = payload[:identifier]
+            if path
+              @_identifiers[path] += 1
+            end
+
             if virtual_path = payload[:virtual_path]
               partial = virtual_path =~ /^.*\/_[^\/]*$/
 
@@ -40,12 +45,9 @@ module Rails
               end
 
               @_templates[virtual_path] += 1
-            else
-              path = payload[:identifier]
-              if path
-                @_files[path] += 1
-                @_files[path.split("/").last] += 1
-              end
+            elsif path
+              @_files[path] += 1
+              @_files[path.split("/").last] += 1
             end
           end
         end
@@ -101,6 +103,9 @@ module Rails
         #   assert_template file: nil
         #   assert_template file: false
         #
+        #   # assert that the template "/path/to/app/views/admin/posts/new.html.erb" was rendered
+        #   assert_template identifier: "/path/to/app/views/admin/posts/new.html.erb"
+        #
         # In a view test case, you can also assert that specific locals are passed
         # to partials:
         #
@@ -131,7 +136,7 @@ module Rails
               end
             assert matches_template, msg
           when Hash
-            options.assert_valid_keys(:layout, :partial, :locals, :count, :file)
+            options.assert_valid_keys(:layout, :partial, :locals, :count, :file, :identifier)
 
             if options.key?(:layout)
               expected_layout = options[:layout]
@@ -154,6 +159,10 @@ module Rails
               assert_includes @_files.keys, options[:file]
             elsif options.key?(:file)
               assert @_files.blank?, "expected no files but #{@_files.keys} was rendered"
+            end
+
+            if options[:identifier]
+              assert_includes @_identifiers.keys, options[:identifier]
             end
 
             if expected_partial = options[:partial]
